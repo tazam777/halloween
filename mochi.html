@@ -55,7 +55,7 @@ h1{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(3rem,15
   background:radial-gradient(ellipse at 50% 88%,rgba(255,159,208,.2),transparent 60%),linear-gradient(180deg,#2c1b4e,#3d2569);
   padding:64px 16px 22px;display:flex;justify-content:center}
 .rug{position:absolute;left:50%;bottom:14px;width:min(80%,320px);height:40px;transform:translateX(-50%);border-radius:50%;background:repeating-radial-gradient(ellipse at center,#ff9fd0 0 6px,#c4a6ff 6px 12px);opacity:.5}
-.catbox{position:relative;width:min(70vw,280px);aspect-ratio:150/156;z-index:1}
+.catbox{position:relative;width:min(70vw,280px);aspect-ratio:156/158;z-index:1}
 #cat{width:100%;height:100%;display:block;overflow:visible;transform-origin:50% 100%}
 
 /* mood: faces, ears, blush */
@@ -198,7 +198,7 @@ h1{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(3rem,15
   <header>
     <p class="eyebrow">say hi to</p>
     <h1>MOCHI</h1>
-    <p class="sub">tiny tuxedo. big opinions.</p>
+    <p class="sub">one BIG tuxedo cat. even bigger opinions.</p>
   </header>
 
   <section class="meter" aria-label="Mochi's mood">
@@ -227,17 +227,17 @@ h1{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(3rem,15
         </svg>
       </div>
 
-      <svg id="cat" viewBox="5 0 150 156" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mochi, a tuxedo cat with a pink bow tie">
-        <g id="tail"><path d="M126 118 q30 -6 22 -40 q-4 -12 -10 -6 q6 22 -16 34z" fill="#1d1a24"/></g>
+      <svg id="cat" viewBox="2 0 156 158" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mochi, a tuxedo cat with a pink bow tie">
+        <g id="tail"><path transform="translate(12 2)" d="M126 118 q30 -6 22 -40 q-4 -12 -10 -6 q6 22 -16 34z" fill="#1d1a24"/></g>
         <g id="body">
-          <ellipse cx="80" cy="112" rx="46" ry="34" fill="#1d1a24"/>
-          <path d="M62 92 q18 -8 36 0 l-4 48 h-28z" fill="#fbf7f2"/>
+          <ellipse cx="80" cy="110" rx="62" ry="40" fill="#1d1a24"/>
+          <path d="M56 94 q24 -10 48 0 l-5 50 h-38z" fill="#fbf7f2"/>
         </g>
 
         <g id="head">
           <g id="earL"><path d="M34 50 L40 10 L66 36z" fill="#1d1a24"/><path d="M42 40 L44 20 L58 35z" fill="#ff9fd0"/></g>
           <g id="earR"><path d="M126 50 L120 10 L94 36z" fill="#1d1a24"/><path d="M118 40 L116 20 L102 35z" fill="#ff9fd0"/></g>
-          <ellipse cx="80" cy="60" rx="48" ry="40" fill="#1d1a24"/>
+          <ellipse cx="80" cy="61" rx="52" ry="41" fill="#1d1a24"/>
           <path d="M80 40 q-6 18 -26 30 q-6 16 26 26 q32 -10 26 -26 q-20 -12 -26 -30z" fill="#fbf7f2"/>
           <ellipse class="blush" cx="54" cy="74" rx="8" ry="4.5" fill="#ff78aa"/>
           <ellipse class="blush" cx="106" cy="74" rx="8" ry="4.5" fill="#ff78aa"/>
@@ -306,12 +306,12 @@ h1{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(3rem,15
         <g id="bow"><path d="M68 96 l12 6 l12 -6 l-2 10 l-10 -4 l-10 4z" fill="#ff6fae"/><circle cx="80" cy="102" r="3.5" fill="#d9468a"/></g>
 
         <g id="pawL">
-          <ellipse cx="60" cy="140" rx="13" ry="8" fill="#fbf7f2" stroke="#e2d6ec" stroke-width="1.2"/>
-          <g class="claw" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"><path d="M53 133 l-1.5 -4"/><path d="M60 132 v-4.5"/><path d="M67 133 l1.5 -4"/></g>
+          <ellipse cx="54" cy="142" rx="15" ry="8.5" fill="#fbf7f2" stroke="#e2d6ec" stroke-width="1.2"/>
+          <g class="claw" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"><path d="M46 135 l-1.5 -4"/><path d="M54 134 v-4.5"/><path d="M62 135 l1.5 -4"/></g>
         </g>
         <g id="pawR">
-          <ellipse cx="100" cy="140" rx="13" ry="8" fill="#fbf7f2" stroke="#e2d6ec" stroke-width="1.2"/>
-          <g class="beans" fill="#ff9fd0"><ellipse cx="100" cy="142.5" rx="5" ry="3.4"/><circle cx="93.5" cy="137" r="2.3"/><circle cx="100" cy="135.2" r="2.3"/><circle cx="106.5" cy="137" r="2.3"/></g>
+          <ellipse cx="106" cy="142" rx="15" ry="8.5" fill="#fbf7f2" stroke="#e2d6ec" stroke-width="1.2"/>
+          <g class="beans" fill="#ff9fd0"><ellipse cx="106" cy="144.5" rx="5.5" ry="3.6"/><circle cx="99" cy="139" r="2.4"/><circle cx="106" cy="137.2" r="2.4"/><circle cx="113" cy="139" r="2.4"/></g>
         </g>
       </svg>
     </div>
@@ -489,7 +489,7 @@ h1{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(3rem,15
 
   const ACTIONS = {
     pats() {
-      good(8, 5, 'purr~', 'pat', 650, pick(['Pat pat pat. Approved.', 'He leans into your hand. Purr motor: ON.', 'Tiny head, enormous purrs.']));
+      good(8, 5, 'purr~', 'pat', 650, pick(['Pat pat pat. Approved.', 'He leans into your hand. Purr motor: ON.', 'Big boy, enormous purrs.']));
     },
     chin() {
       good(10, 6, 'prrrrrr', 'chin', 1000, pick(['Chin scratches: elite tier.', 'His eyes go all slow-blinky.', 'He tilts his head for the good spot.']));
@@ -536,7 +536,7 @@ h1{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(3rem,15
       }, reduce ? 50 : 480);
     },
     pickup() {
-      if (state.mood >= 65) good(6, 5, 'i am loaf', 'up', 1400, pick(['Carried like a precious little loaf.', 'He allows it. Purring loudly.']));
+      if (state.mood >= 65) good(6, 5, 'i am loaf', 'up', 1400, pick(['Carried like a precious, very heavy loaf.', 'Oof. He is HEAVY. Purring loudly though.']));
       else bad(-8, 'melt', 1400, 'He turned into liquid and slid right out of your arms.', 'nuh uh');
     },
     tail() {
