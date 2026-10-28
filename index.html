@@ -226,6 +226,21 @@ button.pet:focus-visible { outline: 3px solid var(--bubblegum); outline-offset: 
 }
 @keyframes rise { from { opacity: 1; transform: translateY(0) scale(.6); } to { opacity: 0; transform: translateY(-170px) scale(1.3); } }
 
+.links { border-top: 2px dotted var(--lilac); padding-top: 22px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.links a {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  min-height: 92px; padding: 12px 8px; border-radius: 22px; text-decoration: none;
+  font-family: var(--f-cute); font-size: 1.3rem; line-height: 1.1;
+  transition: transform .12s, box-shadow .12s;
+}
+.links a .e { font-size: 2rem; }
+.links a small { font-family: var(--f-hand); font-size: 1rem; opacity: .85; }
+.links .rage { background: var(--pumpkin); color: #3a1240; box-shadow: 0 5px 0 #c4661a; }
+.links .cat { background: var(--lilac); color: #2a1430; box-shadow: 0 5px 0 #7a5ac0; }
+.links a:hover { transform: translateY(-2px); }
+.links a:active { transform: translateY(3px); box-shadow: none; }
+.links a:focus-visible { outline: 3px solid var(--bubblegum); outline-offset: 4px; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
@@ -301,6 +316,11 @@ button.pet:focus-visible { outline: 3px solid var(--bubblegum); outline-offset: 
     <button class="pet" id="pet" type="button">click to pet Mochi 🐾</button>
     <p class="count pets" id="pets" aria-live="polite">Mochi pets: 0</p>
   </div>
+
+  <nav class="links" aria-label="More pages">
+    <a class="rage" href="rage.html"><span class="e" aria-hidden="true">🔨</span>Rage Room<small>smash stuff, feel better</small></a>
+    <a class="cat" href="mochi.html"><span class="e" aria-hidden="true">🐾</span>Mochi's Room<small>pets, treats, belly traps</small></a>
+  </nav>
 
   <p class="sign">happy halloween 🎃</p>
 </main>
