@@ -327,7 +327,7 @@ h1{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(3rem,15
     <button class="act" type="button" data-a="beans"><span class="e" aria-hidden="true">🐾</span>Toe beans</button>
     <button class="act" type="button" data-a="feather"><span class="e" aria-hidden="true">🪶</span>Feather toy</button>
     <button class="act treat" type="button" data-a="treat" id="treatBtn"><span class="e" aria-hidden="true">🐟</span>Give a treat</button>
-    <button class="act" type="button" data-a="pickup"><span class="e" aria-hidden="true">🤲</span>Pick her up</button>
+    <button class="act" type="button" data-a="pickup"><span class="e" aria-hidden="true">🤲</span>Pick him up</button>
     <button class="act" type="button" data-a="tail"><span class="e" aria-hidden="true">〰️</span>Touch the tail</button>
   </div>
 
@@ -462,7 +462,7 @@ h1{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(3rem,15
     const w = $('wrap'); w.classList.remove('jolt'); void w.offsetWidth; w.classList.add('jolt');
   };
 
-  const moodyNote = (before, after) => (after === 'moody' && before !== 'moody') ? " Uh oh, she's Moody now. Only a treat will fix this." : '';
+  const moodyNote = (before, after) => (after === 'moody' && before !== 'moody') ? " Uh oh, he's Moody now. Only a treat will fix this." : '';
 
   const good = (dm, dl, say, an, ms, line) => {
     setMood(state.mood + dm);
@@ -489,34 +489,34 @@ h1{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(3rem,15
 
   const ACTIONS = {
     pats() {
-      good(8, 5, 'purr~', 'pat', 650, pick(['Pat pat pat. Approved.', 'She leans into your hand. Purr motor: ON.', 'Tiny head, enormous purrs.']));
+      good(8, 5, 'purr~', 'pat', 650, pick(['Pat pat pat. Approved.', 'He leans into your hand. Purr motor: ON.', 'Tiny head, enormous purrs.']));
     },
     chin() {
-      good(10, 6, 'prrrrrr', 'chin', 1000, pick(['Chin scratches: elite tier.', 'Her eyes go all slow-blinky.', 'She tilts her head for the good spot.']));
+      good(10, 6, 'prrrrrr', 'chin', 1000, pick(['Chin scratches: elite tier.', 'His eyes go all slow-blinky.', 'He tilts his head for the good spot.']));
     },
     belly() {
       const k = moodOf(state.mood).k;
       const trap = k === 'blissful' ? .5 : (k === 'grumpy' ? 1 : .75);
       if (Math.random() < trap) {
-        swipe(-22, pick(['IT WAS A TRAP. Bunny kicks + swipe.', 'She grabbed your hand and kicked it. Classic.', 'Belly rubs are a privilege, not a right.']), pick(['HISS!', 'mrrAOW!!', 'NOPE']));
+        swipe(-22, pick(['IT WAS A TRAP. Bunny kicks + swipe.', 'He grabbed your hand and kicked it. Classic.', 'Belly rubs are a privilege, not a right.']), pick(['HISS!', 'mrrAOW!!', 'NOPE']));
       } else {
-        good(14, 10, '...ok fine', 'wiggle', 900, 'She allowed it. Just this once. Tell no one.');
+        good(14, 10, '...ok fine', 'wiggle', 900, 'He allowed it. Just this once. Tell no one.');
       }
     },
     boop() {
-      good(5, 3, 'boop?!', 'boop', 800, pick(['Boop! Mlem deployed.', 'Nose: booped. Dignity: slightly dented.', 'She looks offended but secretly loved it.']));
+      good(5, 3, 'boop?!', 'boop', 800, pick(['Boop! Mlem deployed.', 'Nose: booped. Dignity: slightly dented.', 'He looks offended but secretly loved it.']));
     },
     beans() {
-      good(7, 5, 'beans!!', 'beans', 1500, pick(['TOE BEANS. Pink. Squishy. Perfect.', 'She lets you hold one paw. Huge honor.', 'Bean inspection complete: 10/10.']));
+      good(7, 5, 'beans!!', 'beans', 1500, pick(['TOE BEANS. Pink. Squishy. Perfect.', 'He lets you hold one paw. Huge honor.', 'Bean inspection complete: 10/10.']));
     },
     feather() {
       busy = true;
       feather.className = 'feather tease';
       bubble('!!');
-      setStatus('She spots the feather. Butt wiggle engaged...');
+      setStatus('He spots the feather. Butt wiggle engaged...');
       setTimeout(() => {
         feather.className = 'feather fly';
-        good(12, 8, '*pounce*', 'pounce', 800, pick(['POUNCE! The feather never stood a chance.', 'Mighty huntress, defeater of feathers.', 'She caught it and is very proud of herself.']));
+        good(12, 8, '*pounce*', 'pounce', 800, pick(['POUNCE! The feather never stood a chance.', 'Mighty hunter, defeater of feathers.', 'He caught it and is very proud of himself.']));
         save(); render();
         setTimeout(() => { feather.className = 'feather'; busy = false; }, 600);
       }, reduce ? 200 : 900);
@@ -530,24 +530,24 @@ h1{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(3rem,15
         mochi.classList.remove('ignoring');
         anim('nom', 1000); bubble('nom nom nom'); hearts(5);
         setStatus((before === 'moody' ? 'Treat accepted. All is forgiven. ' : '') +
-          pick(['Mood: fully restored.', 'Tiny crunchy happiness delivered.', 'She now loves you the most (for 5 minutes).']) + ' <b>+4 💗</b>');
+          pick(['Mood: fully restored.', 'Tiny crunchy happiness delivered.', 'He now loves you the most (for 5 minutes).']) + ' <b>+4 💗</b>');
         save(); render();
         busy = false;
       }, reduce ? 50 : 480);
     },
     pickup() {
-      if (state.mood >= 65) good(6, 5, 'i am loaf', 'up', 1400, pick(['Carried like a precious little loaf.', 'She allows it. Purring loudly.']));
-      else bad(-8, 'melt', 1400, 'She turned into liquid and slid right out of your arms.', 'nuh uh');
+      if (state.mood >= 65) good(6, 5, 'i am loaf', 'up', 1400, pick(['Carried like a precious little loaf.', 'He allows it. Purring loudly.']));
+      else bad(-8, 'melt', 1400, 'He turned into liquid and slid right out of your arms.', 'nuh uh');
     },
     tail() {
-      bad(-9, 'tail', 900, pick(['The tail is NOT for touching.', 'Tail lash! She glares over her shoulder.', 'Hands off the tail, peasant.']), 'HEY!');
+      bad(-9, 'tail', 900, pick(['The tail is NOT for touching.', 'Tail lash! He glares over his shoulder.', 'Hands off the tail, peasant.']), 'HEY!');
     }
   };
 
   const ignore = () => {
     mochi.classList.add('ignoring');
     bubble('…');
-    setStatus(pick(['Mochi is ignoring you. A treat might change her mind.', 'She turned away. Rude, but valid. Try a treat.', 'Left on read by a cat. Treats fix this.']));
+    setStatus(pick(['Mochi is ignoring you. A treat might change his mind.', 'He turned away. Rude, but valid. Try a treat.', 'Left on read by a cat. Treats fix this.']));
     clearTimeout(ignTimer);
     ignTimer = setTimeout(() => mochi.classList.remove('ignoring'), 1600);
   };
@@ -564,7 +564,7 @@ h1{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(3rem,15
     if (!confirm('Reset love points, swipes and treats?')) return;
     state.love = 0; state.swipes = 0; state.treats = 0; state.mood = 62;
     save(); render();
-    setStatus('Fresh start. Mochi has forgotten everything (she says).');
+    setStatus('Fresh start. Mochi has forgotten everything (he says).');
   });
 
   // ---------- idle life ----------
